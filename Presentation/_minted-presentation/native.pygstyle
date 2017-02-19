@@ -1,0 +1,107 @@
+
+\makeatletter
+\def\PYGnative@reset{\let\PYGnative@it=\relax \let\PYGnative@bf=\relax%
+    \let\PYGnative@ul=\relax \let\PYGnative@tc=\relax%
+    \let\PYGnative@bc=\relax \let\PYGnative@ff=\relax}
+\def\PYGnative@tok#1{\csname PYGnative@tok@#1\endcsname}
+\def\PYGnative@toks#1+{\ifx\relax#1\empty\else%
+    \PYGnative@tok{#1}\expandafter\PYGnative@toks\fi}
+\def\PYGnative@do#1{\PYGnative@bc{\PYGnative@tc{\PYGnative@ul{%
+    \PYGnative@it{\PYGnative@bf{\PYGnative@ff{#1}}}}}}}
+\def\PYGnative#1#2{\PYGnative@reset\PYGnative@toks#1+\relax+\PYGnative@do{#2}}
+
+\expandafter\def\csname PYGnative@tok@gd\endcsname{\def\PYGnative@tc##1{\textcolor[rgb]{0.82,0.14,0.14}{##1}}}
+\expandafter\def\csname PYGnative@tok@\endcsname{\def\PYGnative@tc##1{\textcolor[rgb]{0.82,0.82,0.82}{##1}}}
+\expandafter\def\csname PYGnative@tok@gu\endcsname{\let\PYGnative@ul=\underline\def\PYGnative@tc##1{\textcolor[rgb]{1.00,1.00,1.00}{##1}}}
+\expandafter\def\csname PYGnative@tok@gt\endcsname{\def\PYGnative@tc##1{\textcolor[rgb]{0.82,0.14,0.14}{##1}}}
+\expandafter\def\csname PYGnative@tok@gs\endcsname{\let\PYGnative@bf=\textbf\def\PYGnative@tc##1{\textcolor[rgb]{0.82,0.82,0.82}{##1}}}
+\expandafter\def\csname PYGnative@tok@gr\endcsname{\def\PYGnative@tc##1{\textcolor[rgb]{0.82,0.14,0.14}{##1}}}
+\expandafter\def\csname PYGnative@tok@cm\endcsname{\let\PYGnative@it=\textit\def\PYGnative@tc##1{\textcolor[rgb]{0.60,0.60,0.60}{##1}}}
+\expandafter\def\csname PYGnative@tok@vg\endcsname{\def\PYGnative@tc##1{\textcolor[rgb]{0.25,1.00,1.00}{##1}}}
+\expandafter\def\csname PYGnative@tok@vi\endcsname{\def\PYGnative@tc##1{\textcolor[rgb]{0.25,1.00,1.00}{##1}}}
+\expandafter\def\csname PYGnative@tok@l\endcsname{\def\PYGnative@tc##1{\textcolor[rgb]{0.82,0.82,0.82}{##1}}}
+\expandafter\def\csname PYGnative@tok@cs\endcsname{\let\PYGnative@bf=\textbf\def\PYGnative@tc##1{\textcolor[rgb]{0.90,0.03,0.03}{##1}}\def\PYGnative@bc##1{\setlength{\fboxsep}{0pt}\colorbox[rgb]{0.32,0.00,0.00}{\strut ##1}}}
+\expandafter\def\csname PYGnative@tok@ge\endcsname{\let\PYGnative@it=\textit\def\PYGnative@tc##1{\textcolor[rgb]{0.82,0.82,0.82}{##1}}}
+\expandafter\def\csname PYGnative@tok@vc\endcsname{\def\PYGnative@tc##1{\textcolor[rgb]{0.25,1.00,1.00}{##1}}}
+\expandafter\def\csname PYGnative@tok@il\endcsname{\def\PYGnative@tc##1{\textcolor[rgb]{0.21,0.47,0.66}{##1}}}
+\expandafter\def\csname PYGnative@tok@go\endcsname{\def\PYGnative@tc##1{\textcolor[rgb]{0.80,0.80,0.80}{##1}}}
+\expandafter\def\csname PYGnative@tok@cp\endcsname{\let\PYGnative@bf=\textbf\def\PYGnative@tc##1{\textcolor[rgb]{0.80,0.16,0.16}{##1}}}
+\expandafter\def\csname PYGnative@tok@gi\endcsname{\def\PYGnative@tc##1{\textcolor[rgb]{0.35,0.60,0.10}{##1}}}
+\expandafter\def\csname PYGnative@tok@gh\endcsname{\let\PYGnative@bf=\textbf\def\PYGnative@tc##1{\textcolor[rgb]{1.00,1.00,1.00}{##1}}}
+\expandafter\def\csname PYGnative@tok@ni\endcsname{\def\PYGnative@tc##1{\textcolor[rgb]{0.82,0.82,0.82}{##1}}}
+\expandafter\def\csname PYGnative@tok@ld\endcsname{\def\PYGnative@tc##1{\textcolor[rgb]{0.82,0.82,0.82}{##1}}}
+\expandafter\def\csname PYGnative@tok@nl\endcsname{\def\PYGnative@tc##1{\textcolor[rgb]{0.82,0.82,0.82}{##1}}}
+\expandafter\def\csname PYGnative@tok@nn\endcsname{\let\PYGnative@ul=\underline\def\PYGnative@tc##1{\textcolor[rgb]{0.27,0.50,0.81}{##1}}}
+\expandafter\def\csname PYGnative@tok@no\endcsname{\def\PYGnative@tc##1{\textcolor[rgb]{0.25,1.00,1.00}{##1}}}
+\expandafter\def\csname PYGnative@tok@na\endcsname{\def\PYGnative@tc##1{\textcolor[rgb]{0.73,0.73,0.73}{##1}}}
+\expandafter\def\csname PYGnative@tok@nb\endcsname{\def\PYGnative@tc##1{\textcolor[rgb]{0.14,0.56,0.62}{##1}}}
+\expandafter\def\csname PYGnative@tok@nc\endcsname{\let\PYGnative@ul=\underline\def\PYGnative@tc##1{\textcolor[rgb]{0.27,0.50,0.81}{##1}}}
+\expandafter\def\csname PYGnative@tok@nd\endcsname{\def\PYGnative@tc##1{\textcolor[rgb]{1.00,0.65,0.00}{##1}}}
+\expandafter\def\csname PYGnative@tok@ne\endcsname{\def\PYGnative@tc##1{\textcolor[rgb]{0.73,0.73,0.73}{##1}}}
+\expandafter\def\csname PYGnative@tok@nf\endcsname{\def\PYGnative@tc##1{\textcolor[rgb]{0.27,0.50,0.81}{##1}}}
+\expandafter\def\csname PYGnative@tok@nx\endcsname{\def\PYGnative@tc##1{\textcolor[rgb]{0.82,0.82,0.82}{##1}}}
+\expandafter\def\csname PYGnative@tok@si\endcsname{\def\PYGnative@tc##1{\textcolor[rgb]{0.93,0.62,0.07}{##1}}}
+\expandafter\def\csname PYGnative@tok@s2\endcsname{\def\PYGnative@tc##1{\textcolor[rgb]{0.93,0.62,0.07}{##1}}}
+\expandafter\def\csname PYGnative@tok@esc\endcsname{\def\PYGnative@tc##1{\textcolor[rgb]{0.82,0.82,0.82}{##1}}}
+\expandafter\def\csname PYGnative@tok@x\endcsname{\def\PYGnative@tc##1{\textcolor[rgb]{0.82,0.82,0.82}{##1}}}
+\expandafter\def\csname PYGnative@tok@py\endcsname{\def\PYGnative@tc##1{\textcolor[rgb]{0.82,0.82,0.82}{##1}}}
+\expandafter\def\csname PYGnative@tok@nt\endcsname{\let\PYGnative@bf=\textbf\def\PYGnative@tc##1{\textcolor[rgb]{0.42,0.72,0.15}{##1}}}
+\expandafter\def\csname PYGnative@tok@nv\endcsname{\def\PYGnative@tc##1{\textcolor[rgb]{0.25,1.00,1.00}{##1}}}
+\expandafter\def\csname PYGnative@tok@s1\endcsname{\def\PYGnative@tc##1{\textcolor[rgb]{0.93,0.62,0.07}{##1}}}
+\expandafter\def\csname PYGnative@tok@ch\endcsname{\let\PYGnative@it=\textit\def\PYGnative@tc##1{\textcolor[rgb]{0.60,0.60,0.60}{##1}}}
+\expandafter\def\csname PYGnative@tok@sx\endcsname{\def\PYGnative@tc##1{\textcolor[rgb]{1.00,0.65,0.00}{##1}}}
+\expandafter\def\csname PYGnative@tok@m\endcsname{\def\PYGnative@tc##1{\textcolor[rgb]{0.21,0.47,0.66}{##1}}}
+\expandafter\def\csname PYGnative@tok@gp\endcsname{\def\PYGnative@tc##1{\textcolor[rgb]{0.67,0.67,0.67}{##1}}}
+\expandafter\def\csname PYGnative@tok@sh\endcsname{\def\PYGnative@tc##1{\textcolor[rgb]{0.93,0.62,0.07}{##1}}}
+\expandafter\def\csname PYGnative@tok@ow\endcsname{\let\PYGnative@bf=\textbf\def\PYGnative@tc##1{\textcolor[rgb]{0.42,0.72,0.15}{##1}}}
+\expandafter\def\csname PYGnative@tok@mf\endcsname{\def\PYGnative@tc##1{\textcolor[rgb]{0.21,0.47,0.66}{##1}}}
+\expandafter\def\csname PYGnative@tok@bp\endcsname{\def\PYGnative@tc##1{\textcolor[rgb]{0.14,0.56,0.62}{##1}}}
+\expandafter\def\csname PYGnative@tok@mh\endcsname{\def\PYGnative@tc##1{\textcolor[rgb]{0.21,0.47,0.66}{##1}}}
+\expandafter\def\csname PYGnative@tok@c1\endcsname{\let\PYGnative@it=\textit\def\PYGnative@tc##1{\textcolor[rgb]{0.60,0.60,0.60}{##1}}}
+\expandafter\def\csname PYGnative@tok@o\endcsname{\def\PYGnative@tc##1{\textcolor[rgb]{0.82,0.82,0.82}{##1}}}
+\expandafter\def\csname PYGnative@tok@kc\endcsname{\let\PYGnative@bf=\textbf\def\PYGnative@tc##1{\textcolor[rgb]{0.42,0.72,0.15}{##1}}}
+\expandafter\def\csname PYGnative@tok@c\endcsname{\let\PYGnative@it=\textit\def\PYGnative@tc##1{\textcolor[rgb]{0.60,0.60,0.60}{##1}}}
+\expandafter\def\csname PYGnative@tok@kr\endcsname{\let\PYGnative@bf=\textbf\def\PYGnative@tc##1{\textcolor[rgb]{0.42,0.72,0.15}{##1}}}
+\expandafter\def\csname PYGnative@tok@g\endcsname{\def\PYGnative@tc##1{\textcolor[rgb]{0.82,0.82,0.82}{##1}}}
+\expandafter\def\csname PYGnative@tok@err\endcsname{\def\PYGnative@tc##1{\textcolor[rgb]{0.65,0.09,0.09}{##1}}\def\PYGnative@bc##1{\setlength{\fboxsep}{0pt}\colorbox[rgb]{0.89,0.82,0.82}{\strut ##1}}}
+\expandafter\def\csname PYGnative@tok@mb\endcsname{\def\PYGnative@tc##1{\textcolor[rgb]{0.21,0.47,0.66}{##1}}}
+\expandafter\def\csname PYGnative@tok@ss\endcsname{\def\PYGnative@tc##1{\textcolor[rgb]{0.93,0.62,0.07}{##1}}}
+\expandafter\def\csname PYGnative@tok@sr\endcsname{\def\PYGnative@tc##1{\textcolor[rgb]{0.93,0.62,0.07}{##1}}}
+\expandafter\def\csname PYGnative@tok@mo\endcsname{\def\PYGnative@tc##1{\textcolor[rgb]{0.21,0.47,0.66}{##1}}}
+\expandafter\def\csname PYGnative@tok@kd\endcsname{\let\PYGnative@bf=\textbf\def\PYGnative@tc##1{\textcolor[rgb]{0.42,0.72,0.15}{##1}}}
+\expandafter\def\csname PYGnative@tok@mi\endcsname{\def\PYGnative@tc##1{\textcolor[rgb]{0.21,0.47,0.66}{##1}}}
+\expandafter\def\csname PYGnative@tok@kn\endcsname{\let\PYGnative@bf=\textbf\def\PYGnative@tc##1{\textcolor[rgb]{0.42,0.72,0.15}{##1}}}
+\expandafter\def\csname PYGnative@tok@cpf\endcsname{\let\PYGnative@it=\textit\def\PYGnative@tc##1{\textcolor[rgb]{0.60,0.60,0.60}{##1}}}
+\expandafter\def\csname PYGnative@tok@n\endcsname{\def\PYGnative@tc##1{\textcolor[rgb]{0.82,0.82,0.82}{##1}}}
+\expandafter\def\csname PYGnative@tok@p\endcsname{\def\PYGnative@tc##1{\textcolor[rgb]{0.82,0.82,0.82}{##1}}}
+\expandafter\def\csname PYGnative@tok@s\endcsname{\def\PYGnative@tc##1{\textcolor[rgb]{0.93,0.62,0.07}{##1}}}
+\expandafter\def\csname PYGnative@tok@kp\endcsname{\def\PYGnative@tc##1{\textcolor[rgb]{0.42,0.72,0.15}{##1}}}
+\expandafter\def\csname PYGnative@tok@w\endcsname{\def\PYGnative@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PYGnative@tok@kt\endcsname{\let\PYGnative@bf=\textbf\def\PYGnative@tc##1{\textcolor[rgb]{0.42,0.72,0.15}{##1}}}
+\expandafter\def\csname PYGnative@tok@sc\endcsname{\def\PYGnative@tc##1{\textcolor[rgb]{0.93,0.62,0.07}{##1}}}
+\expandafter\def\csname PYGnative@tok@sb\endcsname{\def\PYGnative@tc##1{\textcolor[rgb]{0.93,0.62,0.07}{##1}}}
+\expandafter\def\csname PYGnative@tok@k\endcsname{\let\PYGnative@bf=\textbf\def\PYGnative@tc##1{\textcolor[rgb]{0.42,0.72,0.15}{##1}}}
+\expandafter\def\csname PYGnative@tok@se\endcsname{\def\PYGnative@tc##1{\textcolor[rgb]{0.93,0.62,0.07}{##1}}}
+\expandafter\def\csname PYGnative@tok@sd\endcsname{\def\PYGnative@tc##1{\textcolor[rgb]{0.93,0.62,0.07}{##1}}}
+
+\def\PYGnativeZbs{\char`\\}
+\def\PYGnativeZus{\char`\_}
+\def\PYGnativeZob{\char`\{}
+\def\PYGnativeZcb{\char`\}}
+\def\PYGnativeZca{\char`\^}
+\def\PYGnativeZam{\char`\&}
+\def\PYGnativeZlt{\char`\<}
+\def\PYGnativeZgt{\char`\>}
+\def\PYGnativeZsh{\char`\#}
+\def\PYGnativeZpc{\char`\%}
+\def\PYGnativeZdl{\char`\$}
+\def\PYGnativeZhy{\char`\-}
+\def\PYGnativeZsq{\char`\'}
+\def\PYGnativeZdq{\char`\"}
+\def\PYGnativeZti{\char`\~}
+% for compatibility with earlier versions
+\def\PYGnativeZat{@}
+\def\PYGnativeZlb{[}
+\def\PYGnativeZrb{]}
+\makeatother
+

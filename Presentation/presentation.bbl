@@ -1,0 +1,103 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 2.7 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \sortlist[entry]{nty/global/}
+    \entry{cqrs}{online}{}
+      \name{author}{1}{}{%
+        {{hash=312ac886938a9b2be4f8eb607567fe4c}{%
+           family={Fowler},
+           family_i={F\bibinitperiod},
+           given={Martin},
+           given_i={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{312ac886938a9b2be4f8eb607567fe4c}
+      \strng{fullhash}{312ac886938a9b2be4f8eb607567fe4c}
+      \field{sortinit}{F}
+      \field{sortinithash}{c6a7d9913bbd7b20ea954441c0460b78}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{CQRS}
+      \verb{url}
+      \verb http://martinfowler.com/bliki/CQRS.html
+      \endverb
+      \warn{\item Datamodel: Entry 'cqrs' (ref.bib): Invalid format '6.12.2016' of date field 'date' - ignoring}
+    \endentry
+    \entry{event}{online}{}
+      \name{author}{1}{}{%
+        {{hash=312ac886938a9b2be4f8eb607567fe4c}{%
+           family={Fowler},
+           family_i={F\bibinitperiod},
+           given={Martin},
+           given_i={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{312ac886938a9b2be4f8eb607567fe4c}
+      \strng{fullhash}{312ac886938a9b2be4f8eb607567fe4c}
+      \field{sortinit}{F}
+      \field{sortinithash}{c6a7d9913bbd7b20ea954441c0460b78}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Event Sourcing}
+      \verb{url}
+      \verb http://martinfowler.com/eaaDev/EventSourcing.html
+      \endverb
+      \warn{\item Datamodel: Entry 'event' (ref.bib): Invalid format '6.12.2016' of date field 'date' - ignoring}
+    \endentry
+    \entry{scs}{online}{}
+      \name{author}{1}{}{%
+        {{hash=fae9c7585e5197ccbf56d4936a1fda52}{%
+           family={innoQ},
+           family_i={i\bibinitperiod}}}%
+      }
+      \strng{namehash}{fae9c7585e5197ccbf56d4936a1fda52}
+      \strng{fullhash}{fae9c7585e5197ccbf56d4936a1fda52}
+      \field{sortinit}{i}
+      \field{sortinithash}{25e99d37ba90f7c4fb20baf4e310faf3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Self-Contained Systems}
+      \verb{url}
+      \verb http://scs-architecture.org/
+      \endverb
+      \warn{\item Datamodel: Entry 'scs' (ref.bib): Invalid format '6.12.2016' of date field 'date' - ignoring}
+    \endentry
+    \entry{micro}{online}{}
+      \name{author}{1}{}{%
+        {{hash=d0740bcf48754b8fa2cd3549a1d73461}{%
+           family={Richardson},
+           family_i={R\bibinitperiod},
+           given={Chris},
+           given_i={C\bibinitperiod}}}%
+      }
+      \strng{namehash}{d0740bcf48754b8fa2cd3549a1d73461}
+      \strng{fullhash}{d0740bcf48754b8fa2cd3549a1d73461}
+      \field{sortinit}{R}
+      \field{sortinithash}{c7387613477035a752d935acfc3e3ea2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Microservice architecture}
+      \verb{url}
+      \verb http://microservices.io/
+      \endverb
+      \warn{\item Datamodel: Entry 'micro' (ref.bib): Invalid format '6.12.2016' of date field 'date' - ignoring}
+    \endentry
+  \endsortlist
+\endrefsection
+\endinput
+

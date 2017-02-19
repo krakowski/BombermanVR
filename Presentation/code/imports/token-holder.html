@@ -1,0 +1,25 @@
+<script>
+class TokenHolder extends HTMLElement {
+
+  constructor() {
+    super();
+    this._token = null;
+  }
+
+  static get observedAttributes() { return ["token"]; }
+
+  attributeChangedCallback(name, oldValue, newValue) {
+    this._token = newValue;
+    console.log('Token changed to: ' + newValue);
+  }
+
+  get token() {
+    return this._token;
+  }
+
+  set token(v) {
+    this.setAttribute("token", v);
+  }
+}
+customElements.define('token-holder', TokenHolder);
+</script>
