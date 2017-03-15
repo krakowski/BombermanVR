@@ -165,7 +165,6 @@ public class CustomLobbyManager : NetworkLobbyManager {
 
     public override void OnMatchJoined(bool success, string extendedInfo, MatchInfo matchInfo) {
         base.OnMatchJoined(success, extendedInfo, matchInfo);
-        infoPanel.gameObject.SetActive(false);
     }
 
     public override void OnMatchCreate(bool success, string extendedInfo, MatchInfo matchInfo) {
@@ -380,6 +379,7 @@ public class CustomLobbyManager : NetworkLobbyManager {
 
         if (!NetworkServer.active) {
             backDelegate = StopClientClbk;
+            infoPanel.gameObject.SetActive(false);
             ChangeTo(lobbyPanel);
         }
     }
@@ -388,6 +388,7 @@ public class CustomLobbyManager : NetworkLobbyManager {
     public override void OnClientDisconnect(NetworkConnection conn) {
         base.OnClientDisconnect(conn);
         ChangeTo(mainPanel);
+        StartMatchMaker();
     }
 
     public override void OnClientError(NetworkConnection conn, int errorCode) {
