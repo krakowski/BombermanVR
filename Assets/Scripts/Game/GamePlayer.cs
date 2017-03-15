@@ -144,21 +144,26 @@ public class GamePlayer : NetworkBehaviour {
             RpcSetAsSpectator();
 
             int activePlayers = 0;
+            GamePlayer lastActivePlayer = null;
+            GamePlayer current;
             for(int i = 0; i < NetworkServer.connections.Count; i++) {
                 for(int j = 0; j < NetworkServer.connections[i].playerControllers.Count; j++) {
-                    if (!NetworkServer.connections[i].playerControllers[j].gameObject.GetComponent<GamePlayer>().isSpectator)
+                    current = NetworkServer.connections[i].playerControllers[j].gameObject.GetComponent<GamePlayer>();
+                    if (!current.isSpectator) {
                         activePlayers++;
+                        lastActivePlayer = current;
+                    }     
                 }
             }
-            if (activePlayers == 0)
-                RpcShowLeaderboard();
-        }
-    }
 
-    private void setAsSpectator() {
-        transform.position = spectatorPosition.position;
-        vrCamera.GetComponent<GvrPointerPhysicsRaycaster>().enabled = false;
-        isSpectator = true;
+            // Set last active player as Spectator
+            if (activePlayers == 1) {
+                lastActivePlayer.isSpectator = true;
+                lastActivePlayer.RpcSetAsSpectator();
+                RpcShowLeaderboard();
+            }
+                
+        }
     }
 
     public float getLifeTime() {
