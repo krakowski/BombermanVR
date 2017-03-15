@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.Networking;
 using UnityEngine.Networking.Match;
 using UnityEngine.Networking.Types;
@@ -26,8 +27,8 @@ public class CustomLobbyManager : NetworkLobbyManager {
     [Tooltip("Lobby UI CountdownPanel")]
     public CountdownPanel countdownPanel;
 
-    [Tooltip("Joining Game panel")]
-    public RectTransform joiningPanel;
+    [Tooltip("Information Panel")]
+    public RectTransform infoPanel;
 
     [Tooltip("Lobby UI PlayerList")]
     public CustomLobbyPlayerList playerList;
@@ -83,7 +84,6 @@ public class CustomLobbyManager : NetworkLobbyManager {
     public void OnCreateGameClicked() {
         // Server needs to reset colors in use to prevent endless while loop
         CustomLobbyPlayer.ResetColorsInUse();
-        StartMatchMaker();
         string matchName = RandomNameGenerator.generateRoomName();
         ChangeTo(lobbyPanel);
         matchMaker.CreateMatch(
@@ -99,8 +99,8 @@ public class CustomLobbyManager : NetworkLobbyManager {
     /// Called after user clicks on "Join Game"-Button
     /// </summary>
     public void OnJoinGameClicked() {
-        StartMatchMaker();
-        joiningPanel.gameObject.SetActive(true);
+        infoPanel.GetComponentInChildren<Text>().text = "Joining Game";
+        infoPanel.gameObject.SetActive(true);
         matchMaker.ListMatches(0, 40, "", false, 0, 0, OnMatchList);
     }
 
@@ -138,6 +138,12 @@ public class CustomLobbyManager : NetworkLobbyManager {
         currentPanel = newPanel;
     }
 
+    IEnumerator CloseInfoPanel(float delay) {
+        yield return new WaitForSeconds(delay);
+
+        infoPanel.gameObject.SetActive(false);
+    }
+
     public override void OnMatchList(bool success, string extendedInfo, List<MatchInfoSnapshot> matchList) {
         base.OnMatchList(success, extendedInfo, matchList);
 
@@ -146,13 +152,20 @@ public class CustomLobbyManager : NetworkLobbyManager {
                 MatchInfoSnapshot match = FindMatch(matchList);
                 if (match != null)
                     JoinGame(match);
+                else {
+                    infoPanel.GetComponentInChildren<Text>().text = "No empty slot found";
+                    StartCoroutine(CloseInfoPanel(2.0f));
+                }
+            } else {
+                infoPanel.GetComponentInChildren<Text>().text = "No games available";
+                StartCoroutine(CloseInfoPanel(2.0f));
             }
         }
     }
 
     public override void OnMatchJoined(bool success, string extendedInfo, MatchInfo matchInfo) {
         base.OnMatchJoined(success, extendedInfo, matchInfo);
-        joiningPanel.gameObject.SetActive(false);
+        infoPanel.gameObject.SetActive(false);
     }
 
     public override void OnMatchCreate(bool success, string extendedInfo, MatchInfo matchInfo) {
@@ -392,6 +405,7 @@ public class CustomLobbyManager : NetworkLobbyManager {
         DontDestroyOnLoad(gameObject);
         currentPanel = mainPanel;
         lobbyHook = GetComponent<PlayerLobbyHook>();
+        StartMatchMaker();
     }
 
 }
