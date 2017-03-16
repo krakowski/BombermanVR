@@ -387,6 +387,7 @@ public class CustomLobbyManager : NetworkLobbyManager {
 
     public override void OnClientDisconnect(NetworkConnection conn) {
         base.OnClientDisconnect(conn);
+        infoPanel.gameObject.SetActive(false);
         ChangeTo(mainPanel);
         StartMatchMaker();
     }

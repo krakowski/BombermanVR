@@ -65,6 +65,7 @@ public class CustomLobbyPlayer : NetworkLobbyPlayer {
         }
 
         OnPlayerNameChanged(playerName);
+        OnPlayerColorIndexChanged(playerColorIndex);
     }
 
     public override void OnStartAuthority() {
@@ -165,8 +166,6 @@ public class CustomLobbyPlayer : NetworkLobbyPlayer {
         int idx = 0;
 
         int inUseIdx = colorInUse.IndexOf(idx);
-
-        if (idx < 0) idx = 0;
 
         idx = (idx + 1) % playerSprites.Length;
 
