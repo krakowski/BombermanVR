@@ -15,11 +15,26 @@ public class LeaderBoard : NetworkBehaviour {
     [Tooltip("Player List Reference")]
     public RectTransform playerList;
 
+    [Tooltip("Quit Button")]
+    public RectTransform quitButton;
+
+    [Tooltip("Restart Button")]
+    public RectTransform restartButton;
+
+    [Tooltip("Waiting Button")]
+    public RectTransform waitingButton;
+
     [Tooltip("List Entry Prefab")]
     public Transform listEntryPrefab;
 
     [Tooltip("Leaderboard Canvas")]
     public Canvas canvas;
+
+    //================================================================================
+    // Server properties
+    //================================================================================
+
+    public int playersReady = 0;
 
     //================================================================================
     // Logic
@@ -53,6 +68,34 @@ public class LeaderBoard : NetworkBehaviour {
         CustomLobbyManager.lobbyManagerSingleton.GoBackButton();
     }
 
+    public void OnRestartClicked() {
+        quitButton.gameObject.SetActive(false);
+        restartButton.gameObject.SetActive(false);
+        waitingButton.gameObject.SetActive(true);
+
+        NetworkClient.allClients[0].connection.playerControllers[0].gameObject.GetComponent<GamePlayer>().CmdPlayerReadyToRestart();
+    }
+
+    public void OnWaitingClicked() {
+        quitButton.gameObject.SetActive(true);
+        restartButton.gameObject.SetActive(true);
+        waitingButton.gameObject.SetActive(false);
+
+        NetworkClient.allClients[0].connection.playerControllers[0].gameObject.GetComponent<GamePlayer>().CmdPlayerNotReadyToRestart();
+    }
+
+    public void Reset() {
+        int children = playerList.childCount;
+
+        for(int i = 0; i < children; i++) {
+            Destroy(playerList.GetChild(i).gameObject);
+        }
+
+        quitButton.gameObject.SetActive(true);
+        restartButton.gameObject.SetActive(true);
+        waitingButton.gameObject.SetActive(false);
+    }
+
     /// <summary>
     ///     Hides/Shows the LeaderBoard.
     /// </summary>
@@ -60,5 +103,5 @@ public class LeaderBoard : NetworkBehaviour {
     public void ToggleVisibility(bool enabled) {
         canvas.enabled = enabled;
     }
-	
+
 }

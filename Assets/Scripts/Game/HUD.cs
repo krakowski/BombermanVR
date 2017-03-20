@@ -118,6 +118,13 @@ public class HUD : NetworkBehaviour {
         hudContainer.gameObject.SetActive(false);
     }
 
+    /// <summary>
+    ///     Shows the HUD.
+    /// </summary>
+    public void Show() {
+        hudContainer.gameObject.SetActive(true);
+    }
+
     //================================================================================
     // Start/Update
     //================================================================================

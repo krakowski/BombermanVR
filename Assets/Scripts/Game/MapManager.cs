@@ -208,6 +208,8 @@ public class MapManager : NetworkBehaviour {
     /// </summary>
     public void createMap() {
 
+        
+
         // Editor calls this method frequently.
         // Instance should be created only once.
         if(emptyPositionsList == null)
@@ -295,8 +297,8 @@ public class MapManager : NetworkBehaviour {
 
     public override void OnStartServer() {
         // Server sets seed and crate count
-        randomSeed = Random.Range(0, 100);
-        crateCount = Random.Range(10, 30);
+        // randomSeed = Random.Range(0, 100);
+        // crateCount = Random.Range(10, 30);
     }
 
     //================================================================================

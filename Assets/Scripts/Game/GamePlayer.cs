@@ -213,6 +213,41 @@ public class GamePlayer : NetworkBehaviour {
         playerName = name;
     }
 
+    [Command]
+    public void CmdPlayerReadyToRestart() {
+        leaderBoard = FindObjectOfType<LeaderBoard>();
+        leaderBoard.playersReady++;
+
+        int activePlayers = NetworkServer.connections.Count;
+
+        if (leaderBoard.playersReady == activePlayers) {
+
+            GameObject[] spawnPoints = GameObject.FindGameObjectsWithTag("SpawnPoint");
+
+            // Reset all connected Players
+            for (int i = 0; i < NetworkServer.connections.Count; i++) {
+                for (int j = 0; j < NetworkServer.connections[i].playerControllers.Count; j++) {
+                    GamePlayer g = NetworkServer.connections[i].playerControllers[j].gameObject.GetComponent<GamePlayer>();
+                    g.isSpectator = false;
+                    g.RpcResetPlayer(spawnPoints[i].transform.position + new Vector3(0.0f, 1.5f, 0.0f));
+                }
+            }
+
+            leaderBoard.playersReady = 0;
+
+        }
+    }
+
+    [Command]
+    public void CmdPlayerNotReadyToRestart() {
+        leaderBoard = FindObjectOfType<LeaderBoard>();
+        leaderBoard.playersReady--;
+    }
+
+    //================================================================================
+    // Server commands
+    //================================================================================
+
     [ClientRpc]
     public void RpcSetAsSpectator() {
         transform.position = spectatorPosition.position;
@@ -229,6 +264,21 @@ public class GamePlayer : NetworkBehaviour {
     public void RpcShowLeaderboard() {
         leaderBoard = FindObjectOfType<LeaderBoard>();
         leaderBoard.ToggleVisibility(true);
+    }
+
+    [ClientRpc]
+    public void RpcResetPlayer(Vector3 position) {
+        leaderBoard = FindObjectOfType<LeaderBoard>();
+        leaderBoard.ToggleVisibility(false);
+        leaderBoard.Reset();
+
+        transform.position = position;
+        vrCamera.GetComponent<GvrPointerPhysicsRaycaster>().enabled = true;
+        hud.Show();
+        playerRenderer.enabled = true;
+        isSpectator = false;
+
+        health.heal(3);
     }
 
     //================================================================================
