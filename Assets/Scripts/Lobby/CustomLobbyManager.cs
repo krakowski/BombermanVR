@@ -82,6 +82,7 @@ public class CustomLobbyManager : NetworkLobbyManager {
     /// Called after user clicks on "Create Game"-Button
     /// </summary>
     public void OnCreateGameClicked() {
+        StartMatchMaker();
         // Server needs to reset colors in use to prevent endless while loop
         CustomLobbyPlayer.ResetColorsInUse();
         string matchName = RandomNameGenerator.generateRoomName();
@@ -99,6 +100,7 @@ public class CustomLobbyManager : NetworkLobbyManager {
     /// Called after user clicks on "Join Game"-Button
     /// </summary>
     public void OnJoinGameClicked() {
+        StartMatchMaker();
         infoPanel.GetComponentInChildren<Text>().text = "Joining Game";
         infoPanel.gameObject.SetActive(true);
         matchMaker.ListMatches(0, 40, "", false, 0, 0, OnMatchList);
@@ -389,7 +391,6 @@ public class CustomLobbyManager : NetworkLobbyManager {
         base.OnClientDisconnect(conn);
         infoPanel.gameObject.SetActive(false);
         ChangeTo(mainPanel);
-        StartMatchMaker();
     }
 
     public override void OnClientError(NetworkConnection conn, int errorCode) {
@@ -407,7 +408,6 @@ public class CustomLobbyManager : NetworkLobbyManager {
         DontDestroyOnLoad(gameObject);
         currentPanel = mainPanel;
         lobbyHook = GetComponent<PlayerLobbyHook>();
-        StartMatchMaker();
     }
 
 }
